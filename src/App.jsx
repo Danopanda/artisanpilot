@@ -65,7 +65,7 @@ const IconBulb = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColo
 const IconUsers = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>)
 const IconShare = () => (<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>)
 
-// --- JEU DE DAMES ---
+// --- JEU DE DAMES (IA MINIMAX) ---
 const getValidMoves = (board, color) => {
   const moves = [];
   const isWhite = color === 'blanc';
@@ -389,7 +389,6 @@ function App() {
     const doc = new jsPDF()
     const titreDocument = type === 'devis' ? t('devis').toUpperCase() : t('factures').toUpperCase()
     
-    // Utilise le logo du profil ou le logo par défaut
     const logoToUse = profil.logo || defaultLogo
     
     if (logoToUse) { 
@@ -499,7 +498,6 @@ function App() {
           <form onSubmit={validerOnboarding} className="onboarding-form">
             <div className="onboarding-group">
               <label>{t('logo')}</label>
-              {/* Affiche le logo par défaut si rien n'est chargé */}
               <img src={profil.logo || defaultLogo} alt="Logo" style={{width: '80px', height: '80px', objectFit: 'cover', marginBottom: '10px', borderRadius: '8px', border: '1px solid #ccc'}} />
               <input type="file" accept="image/*" onChange={gererLogo} />
             </div>
@@ -558,7 +556,6 @@ function App() {
             <div className="stories-bar">
               <div className="story-item" onClick={() => setPageActive('parametres')}>
                 <div className="story-ring">
-                  {/* UTILISATION DU LOGO PAR DÉFAUT ICI */}
                   <img src={profil.logo || defaultLogo} alt="Profil" />
                 </div>
                 <span>{t('monProfil')}</span>
@@ -827,7 +824,6 @@ function App() {
                 </div>
                 <div className="profil-logo">
                   <label>{t('logo')}</label>
-                  {/* LOGO PAR DÉFAUT ICI AUSSI */}
                   <img src={profil.logo || defaultLogo} alt="Logo" style={{width: '100px', height: '100px', objectFit: 'cover', marginBottom: '10px', borderRadius: '8px', border: '1px solid #ccc'}} />
                   <input type="file" accept="image/*" onChange={gererLogo} />
                 </div>
