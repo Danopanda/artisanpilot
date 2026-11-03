@@ -4,10 +4,8 @@ import autoTable from 'jspdf-autotable'
 import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, ResponsiveContainer } from 'recharts'
 import './App.css'
 
-// --- LOGO PAR DÉFAUT (SVG intégré) ---
-const const defaultLogo = "/web-app-manifest-512x512.png";
-  "<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%230ea5e9' rx='20'/><text x='50' y='55' font-family='Arial, sans-serif' font-size='40' font-weight='bold' fill='white' text-anchor='middle'>AP</text></svg>"
-);
+// --- LOGO PAR DÉFAUT ---
+const defaultLogo = "/web-app-manifest-512x512.png";
 
 const traductions = {
   fr: {
